@@ -1,5 +1,5 @@
 //
-//  FlickrPlacesViewController.h
+//  FlickrPlacesTableViewController.h
 //  FlickrPlaces
 //
 //  Created by Evgenii Neumerzhitckii on 25/04/13.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FlickrPlacesViewController : UIViewController
+@interface FlickrPlacesTableViewController : UITableViewController
+
+@property (nonatomic, strong) NSArray *photos;
 
 @end
