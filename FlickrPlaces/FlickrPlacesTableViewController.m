@@ -9,11 +9,17 @@
 #import "FlickrPlacesTableViewController.h"
 #import "FlickrFetcher.h"
 
+#define CELL_IDENTIFIER @"Flickr Photo"
+
 @interface FlickrPlacesTableViewController ()
 
 @end
 
 @implementation FlickrPlacesTableViewController
+
+- (void) viewDidLoad {
+    [self refresh:self.navigationItem.rightBarButtonItem];
+}
 
 - (void) setPhotos:(NSArray *)photos {
     if (_photos != photos) {
@@ -35,6 +41,25 @@
             self.navigationItem.rightBarButtonItem = sender;
         });
     });
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.photos.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
+    
+    NSDictionary *photo = self.photos[indexPath.row];
+    NSString *place = photo[@"_content"];
+    place = [place substringFromIndex: [place rangeOfString:@","].location + 2];
+    cell.textLabel.text = photo[FLICKR_WOE_NAME];
+    cell.detailTextLabel.text = place;
+    return cell;
 }
 
 @end

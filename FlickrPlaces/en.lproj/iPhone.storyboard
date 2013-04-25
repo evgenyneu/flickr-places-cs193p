@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Flickr Places Table View Controller - Top Places-->
+        <!--Flickr Places Table View Controller - Top Flickr Places-->
         <scene sceneID="hIk-DZ-Oyu">
             <objects>
                 <tableViewController id="cBj-Im-S6j" customClass="FlickrPlacesTableViewController" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                             <outlet property="delegate" destination="cBj-Im-S6j" id="Kef-vV-ex2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Top Places" id="W1U-To-Gmi">
+                    <navigationItem key="navigationItem" title="Top Flickr Places" id="W1U-To-Gmi">
                         <barButtonItem key="rightBarButtonItem" title="Refresh" id="hzg-0G-koi">
                             <connections>
                                 <action selector="refresh:" destination="cBj-Im-S6j" id="02m-5T-TNu"/>
