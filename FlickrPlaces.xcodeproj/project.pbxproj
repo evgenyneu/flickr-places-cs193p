@@ -85,8 +85,6 @@
 		2B2DF2A5172907F200F9E8D1 /* FlickrPlaces */ = {
 			isa = PBXGroup;
 			children = (
-				2B2DF2AE172907F200F9E8D1 /* FlickrPlacesAppDelegate.h */,
-				2B2DF2AF172907F200F9E8D1 /* FlickrPlacesAppDelegate.m */,
 				2B2DF2B7172907F200F9E8D1 /* MainStoryboard_iPhone.storyboard */,
 				2B2DF2BA172907F200F9E8D1 /* MainStoryboard_iPad.storyboard */,
 				2B2DF2BD172907F200F9E8D1 /* FlickrPlacesViewController.h */,
@@ -99,6 +97,8 @@
 		2B2DF2A6172907F200F9E8D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2B2DF2AE172907F200F9E8D1 /* FlickrPlacesAppDelegate.h */,
+				2B2DF2AF172907F200F9E8D1 /* FlickrPlacesAppDelegate.m */,
 				2B2DF2A7172907F200F9E8D1 /* FlickrPlaces-Info.plist */,
 				2B2DF2A8172907F200F9E8D1 /* InfoPlist.strings */,
 				2B2DF2AB172907F200F9E8D1 /* main.m */,
