@@ -8,7 +8,13 @@ Flickr photo viewer app for iPhone/iPad.
 
 This app is done as an excercise. It follows requirements of assignment #4 for CS 193P class lectures presented by Paul Hegarty in Stanford University, fall 2011.
 
+# Flickr API Key
+
+To run this app please put your Flickr API key into `FlickrAPIKey.h`.
+You can get your Flickr API key [here](http://www.flickr.com/services/api/misc.api_keys.html). It is free.
+
 # External links
 
 * [Lectures videos and PDFs on iTunes](https://itunes.apple.com/us/itunes-u/ipad-iphone-application-development/id473757255)
 * [Stanford class downloads page](http://www.stanford.edu/class/cs193p/cgi-bin/drupal/downloads-2010-fall)
+* [Flick API Key](http://www.flickr.com/services/api/misc.api_keys.html)
