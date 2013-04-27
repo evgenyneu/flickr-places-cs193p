@@ -20,6 +20,7 @@
 		2B2DF2BC172907F200F9E8D1 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2DF2BA172907F200F9E8D1 /* iPad.storyboard */; };
 		2BC0E5B11729146500CFF29A /* FlickrPlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC0E5B01729146500CFF29A /* FlickrPlacesTableViewController.m */; };
 		2BC0E5B21729187E00CFF29A /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2DF2C817290C3900F9E8D1 /* FlickrFetcher.m */; };
+		2BEC6003172BC447008FE21E /* FlickrPlacesTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEC6002172BC447008FE21E /* FlickrPlacesTestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		2B2DF2C817290C3900F9E8D1 /* FlickrFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
 		2BC0E5AF1729146500CFF29A /* FlickrPlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPlacesTableViewController.h; sourceTree = "<group>"; };
 		2BC0E5B01729146500CFF29A /* FlickrPlacesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPlacesTableViewController.m; sourceTree = "<group>"; };
+		2BEC6001172BC447008FE21E /* FlickrPlacesTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPlacesTestViewController.h; sourceTree = "<group>"; };
+		2BEC6002172BC447008FE21E /* FlickrPlacesTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPlacesTestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				2B2DF2BA172907F200F9E8D1 /* iPad.storyboard */,
 				2BC0E5AF1729146500CFF29A /* FlickrPlacesTableViewController.h */,
 				2BC0E5B01729146500CFF29A /* FlickrPlacesTableViewController.m */,
+				2BEC6001172BC447008FE21E /* FlickrPlacesTestViewController.h */,
+				2BEC6002172BC447008FE21E /* FlickrPlacesTestViewController.m */,
 				2B2DF2A6172907F200F9E8D1 /* Supporting Files */,
 			);
 			path = FlickrPlaces;
@@ -197,6 +202,7 @@
 				2B2DF2B0172907F200F9E8D1 /* FlickrPlacesAppDelegate.m in Sources */,
 				2BC0E5B11729146500CFF29A /* FlickrPlacesTableViewController.m in Sources */,
 				2BC0E5B21729187E00CFF29A /* FlickrFetcher.m in Sources */,
+				2BEC6003172BC447008FE21E /* FlickrPlacesTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -44,6 +44,11 @@
     self.topPhotos = [topPhotos copy];
 }
 
+- (NSArray*)topCountryPhotos: (NSInteger)index {
+    NSString *country = self.topCountries[index];
+    return self.topPhotos[country];
+}
+
 - (void) setTopPhotos:(NSDictionary *)topPhotos {
     if (_topPhotos != topPhotos) {
         _topPhotos = topPhotos;
@@ -68,20 +73,35 @@
 
 #pragma mark - Table view data source
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.topCountries.count;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.photos.count;
+    return [self topCountryPhotos:section].count;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return self.topCountries[section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
     
-    NSDictionary *photo = self.photos[indexPath.row];
-    NSString *place = photo[@"_content"];
-    place = [place substringFromIndex: [place rangeOfString:@","].location + 2];
+    NSArray *countryPhotos = [self topCountryPhotos:indexPath.section];
+    
+    NSDictionary *photo = countryPhotos[indexPath.row];
     cell.textLabel.text = photo[FLICKR_WOE_NAME];
-    cell.detailTextLabel.text = place;
+    
+    NSString *place = photo[@"_content"];
+    NSArray *placeComponents = [place componentsSeparatedByString: @", "];
+    if (placeComponents.count == 3) {
+        cell.detailTextLabel.text = placeComponents[1];
+    }
+    
     return cell;
 }
 
