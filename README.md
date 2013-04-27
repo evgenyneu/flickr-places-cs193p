@@ -11,7 +11,7 @@ This app is done as an excercise. It follows requirements of assignment #4 for C
 # Flickr API Key
 
 To run this app please put your Flickr API key into `FlickrAPIKey.h`.
-You can get your Flickr API key [here](http://www.flickr.com/services/api/misc.api_keys.html). It is free.
+You can get your Flickr API key [here](http://www.flickr.com/services/api/misc.api_keys.html).
 
 # External links
 
