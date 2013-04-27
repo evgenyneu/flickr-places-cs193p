@@ -10,6 +10,10 @@
 
 @interface FlickrPlacesTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSDictionary *topPhotos; // key: country name, value: NSArray of photos discriptions (NSDictionary)
+@property (nonatomic, strong) NSArray *topCountries; // Used to store the order of country name keys from topPhotos
+
 @property (nonatomic, strong) NSArray *photos;
+
 
 @end

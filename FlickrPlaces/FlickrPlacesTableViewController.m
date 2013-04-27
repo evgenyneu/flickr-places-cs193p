@@ -28,15 +28,38 @@
     }
 }
 
+- (void)setPhotoData:(NSArray*)photos {
+    NSMutableArray *topCountries = [@[] mutableCopy];
+    NSMutableDictionary *topPhotos = [@{} mutableCopy];
+    
+    for (NSDictionary *photo in photos) {
+        NSString *place = photo[@"_content"];
+        NSArray *placeComponents = [place componentsSeparatedByString: @", "];
+        NSString *country = [placeComponents lastObject];
+        if (![topCountries containsObject: country]) { [topCountries addObject:country]; }
+        if (!topPhotos[country]) { topPhotos[country] = [@[] mutableCopy]; }
+        [topPhotos[country] addObject:photo];
+    }
+    self.topCountries = [topCountries copy];
+    self.topPhotos = [topPhotos copy];
+}
+
+- (void) setTopPhotos:(NSDictionary *)topPhotos {
+    if (_topPhotos != topPhotos) {
+        _topPhotos = topPhotos;
+        [self.tableView reloadData];
+    }
+}
+
 - (IBAction)refresh:(UIBarButtonItem *)sender {
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [spinner startAnimating];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
-
     dispatch_queue_t downloadQueue = dispatch_queue_create("flickr downloader", NULL);
     dispatch_async(downloadQueue, ^{
         NSArray *photos = [FlickrFetcher topPlaces];
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self setPhotoData: photos];
             self.photos = photos;
             self.navigationItem.rightBarButtonItem = sender;
         });
