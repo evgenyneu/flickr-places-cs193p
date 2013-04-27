@@ -40,6 +40,7 @@
         if (!topPhotos[country]) { topPhotos[country] = [@[] mutableCopy]; }
         [topPhotos[country] addObject:photo];
     }
+    [topCountries sortUsingSelector:@selector(caseInsensitiveCompare:)];
     self.topCountries = [topCountries copy];
     self.topPhotos = [topPhotos copy];
 }
