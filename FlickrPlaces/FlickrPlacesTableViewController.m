@@ -23,13 +23,6 @@
     [self refresh:self.navigationItem.rightBarButtonItem];
 }
 
-- (void) setPhotos:(NSArray *)photos {
-    if (_photos != photos) {
-        _photos = photos;
-        [self.tableView reloadData];
-    }
-}
-
 - (void)setPhotoData:(NSArray*)photos {
     NSMutableArray *topCountries = [@[] mutableCopy];
     NSMutableDictionary *topPhotos = [@{} mutableCopy];
@@ -45,6 +38,7 @@
     [topCountries sortUsingSelector:@selector(caseInsensitiveCompare:)];
     self.topCountries = [topCountries copy];
     self.topPhotos = [topPhotos copy];
+    [self.tableView reloadData];
 }
 
 - (NSArray*)topCountryPhotos: (NSInteger)index {
@@ -57,13 +51,6 @@
     return countryPhotos[indexPath.row];
 }
 
-- (void) setTopPhotos:(NSDictionary *)topPhotos {
-    if (_topPhotos != topPhotos) {
-        _topPhotos = topPhotos;
-        [self.tableView reloadData];
-    }
-}
-
 - (IBAction)refresh:(UIBarButtonItem *)sender {
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [spinner startAnimating];
@@ -73,7 +60,6 @@
         NSArray *photos = [FlickrFetcher topPlaces];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setPhotoData: photos];
-            self.photos = photos;
             self.navigationItem.rightBarButtonItem = sender;
         });
     });
