@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Flickr Places Table View Controller - Top Flickr Places-->
+        <!--Flickr Places Table View Controller - Top Places-->
         <scene sceneID="hIk-DZ-Oyu">
             <objects>
                 <tableViewController id="cBj-Im-S6j" customClass="FlickrPlacesTableViewController" sceneMemberID="viewController">
@@ -13,11 +13,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Flickr Photo" textLabel="KAN-5P-4Wi" detailTextLabel="hrt-5d-lpe" style="IBUITableViewCellStyleSubtitle" id="yLD-yE-9kV">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Flickr Photo" textLabel="KAN-5P-4Wi" detailTextLabel="hrt-5d-lpe" style="IBUITableViewCellStyleSubtitle" id="yLD-yE-9kV">
                                 <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <rect key="frame" x="10" y="1" width="280" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAN-5P-4Wi">
@@ -33,6 +33,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="qtH-MH-BOt" kind="push" id="0CV-EE-85F"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -40,7 +43,7 @@
                             <outlet property="delegate" destination="cBj-Im-S6j" id="Kef-vV-ex2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Top Flickr Places" id="W1U-To-Gmi">
+                    <navigationItem key="navigationItem" title="Top Places" id="W1U-To-Gmi">
                         <barButtonItem key="rightBarButtonItem" title="Refresh" id="hzg-0G-koi">
                             <connections>
                                 <action selector="refresh:" destination="cBj-Im-S6j" id="02m-5T-TNu"/>
@@ -50,7 +53,37 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVX-JG-a2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="595" y="58"/>
+            <point key="canvasLocation" x="45" y="2"/>
+        </scene>
+        <!--Photos In Place View Controller-->
+        <scene sceneID="Y1M-4P-PY9">
+            <objects>
+                <tableViewController id="qtH-MH-BOt" customClass="PhotosInPlaceViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="uSg-qb-68O">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="k9F-NP-3gE">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qtH-MH-BOt" id="K2m-yt-PRW"/>
+                            <outlet property="delegate" destination="qtH-MH-BOt" id="o2K-aX-yt4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="IGN-a7-AKb"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oig-i5-O8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="443" y="2"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ENc-uU-d1x">
@@ -68,7 +101,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sGI-W2-3qG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="209" y="58"/>
+            <point key="canvasLocation" x="-341" y="2"/>
         </scene>
     </scenes>
     <classes>
@@ -77,6 +110,9 @@
             <relationships>
                 <relationship kind="action" name="refresh:" candidateClass="UIBarButtonItem"/>
             </relationships>
+        </class>
+        <class className="PhotosInPlaceViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotosInPlaceViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -8,6 +8,7 @@
 
 #import "FlickrPlacesTableViewController.h"
 #import "FlickrFetcher.h"
+#import "PhotosInPlaceViewController.h"
 
 #define CELL_IDENTIFIER @"Flickr Photo"
 
@@ -18,6 +19,7 @@
 @implementation FlickrPlacesTableViewController
 
 - (void) viewDidLoad {
+    [super viewDidLoad];
     [self refresh:self.navigationItem.rightBarButtonItem];
 }
 
@@ -50,6 +52,11 @@
     return self.topPhotos[country];
 }
 
+- (NSDictionary*)photoFromIndexPath: (NSIndexPath*)indexPath {
+    NSArray *countryPhotos = [self topCountryPhotos:indexPath.section];
+    return countryPhotos[indexPath.row];
+}
+
 - (void) setTopPhotos:(NSDictionary *)topPhotos {
     if (_topPhotos != topPhotos) {
         _topPhotos = topPhotos;
@@ -72,6 +79,13 @@
     });
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    NSDictionary *photo = [self photoFromIndexPath:indexPath];
+    [segue.destinationViewController setSelectedPlacePhoto:photo];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -92,9 +106,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTIFIER forIndexPath:indexPath];
     
-    NSArray *countryPhotos = [self topCountryPhotos:indexPath.section];
-    
-    NSDictionary *photo = countryPhotos[indexPath.row];
+    NSDictionary *photo = [self photoFromIndexPath: indexPath];
     cell.textLabel.text = photo[FLICKR_WOE_NAME];
     
     NSString *place = photo[@"_content"];
