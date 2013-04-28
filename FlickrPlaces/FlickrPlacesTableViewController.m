@@ -12,10 +12,6 @@
 
 #define CELL_IDENTIFIER @"Flickr Photo"
 
-@interface FlickrPlacesTableViewController ()
-
-@end
-
 @implementation FlickrPlacesTableViewController
 
 - (void) viewDidLoad {

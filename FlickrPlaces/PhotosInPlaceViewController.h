@@ -11,5 +11,6 @@
 @interface PhotosInPlaceViewController : UITableViewController
 
 @property (nonatomic, weak) NSDictionary *selectedPlacePhoto;
+@property (nonatomic, strong) NSArray *photosInPlace;
 
 @end
