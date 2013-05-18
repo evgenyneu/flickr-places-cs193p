@@ -47,7 +47,7 @@
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     NSDictionary *photo = self.photosInPlace[indexPath.row];
-    [segue.destinationViewController setPhoto:photo];
+    [segue.destinationViewController setPhotoData:photo];
 }
 
 #pragma mark - Table view data source

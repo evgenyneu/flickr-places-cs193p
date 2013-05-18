@@ -10,6 +10,8 @@
 
 @interface PhotoViewController : UIViewController
 
-@property (nonatomic, strong) NSDictionary *photo;
+@property (nonatomic, strong) NSDictionary *photoData;
+
+@property (weak, nonatomic) IBOutlet UIImageView *image;
 
 @end

@@ -107,9 +107,21 @@
                     <view key="view" contentMode="scaleToFill" id="Qyl-p1-4Kv">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBq-Sx-fPJ"/>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gBq-Sx-fPJ" firstAttribute="trailing" secondItem="Qyl-p1-4Kv" secondAttribute="trailing" type="default" id="ktl-2f-hyt"/>
+                            <constraint firstItem="gBq-Sx-fPJ" firstAttribute="leading" secondItem="Qyl-p1-4Kv" secondAttribute="leading" type="default" id="mmd-t7-lfU"/>
+                            <constraint firstItem="gBq-Sx-fPJ" firstAttribute="bottom" secondItem="Qyl-p1-4Kv" secondAttribute="bottom" type="default" id="pro-6m-U5d"/>
+                            <constraint firstItem="gBq-Sx-fPJ" firstAttribute="top" secondItem="Qyl-p1-4Kv" secondAttribute="top" type="default" id="v74-Qf-KNj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yvT-t4-AFk"/>
+                    <connections>
+                        <outlet property="image" destination="gBq-Sx-fPJ" id="HPY-T7-g6w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5v-Oq-mr9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
