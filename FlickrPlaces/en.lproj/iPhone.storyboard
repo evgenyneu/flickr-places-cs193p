@@ -118,10 +118,10 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="gBq-Sx-fPJ" firstAttribute="top" secondItem="XZl-NQ-1kF" secondAttribute="top" type="user" id="CFi-VF-Rb3"/>
-                                    <constraint firstItem="gBq-Sx-fPJ" firstAttribute="trailing" secondItem="XZl-NQ-1kF" secondAttribute="trailing" type="user" id="HWf-zB-cGm"/>
-                                    <constraint firstItem="gBq-Sx-fPJ" firstAttribute="leading" secondItem="XZl-NQ-1kF" secondAttribute="leading" type="user" id="TNn-J1-yLb"/>
-                                    <constraint firstItem="gBq-Sx-fPJ" firstAttribute="bottom" secondItem="XZl-NQ-1kF" secondAttribute="bottom" type="user" id="cRz-d3-LJr"/>
+                                    <constraint firstItem="gBq-Sx-fPJ" firstAttribute="top" secondItem="XZl-NQ-1kF" secondAttribute="top" priority="1" type="user" id="CFi-VF-Rb3"/>
+                                    <constraint firstItem="gBq-Sx-fPJ" firstAttribute="trailing" secondItem="XZl-NQ-1kF" secondAttribute="trailing" priority="1" type="user" id="HWf-zB-cGm"/>
+                                    <constraint firstItem="gBq-Sx-fPJ" firstAttribute="leading" secondItem="XZl-NQ-1kF" secondAttribute="leading" priority="1" type="user" id="TNn-J1-yLb"/>
+                                    <constraint firstItem="gBq-Sx-fPJ" firstAttribute="bottom" secondItem="XZl-NQ-1kF" secondAttribute="bottom" priority="1" type="user" id="cRz-d3-LJr"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

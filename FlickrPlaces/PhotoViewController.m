@@ -9,7 +9,7 @@
 #import "PhotoViewController.h"
 #import "FlickrFetcher.h"
 
-@interface PhotoViewController()
+@interface PhotoViewController()  <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewHeightConstraint;
 
@@ -23,8 +23,19 @@
 
 @implementation PhotoViewController
 
-- (void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void) viewDidLoad {
+    [super viewDidLoad];
+    self.scrollView.delegate = self;
+}
+
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    [self.imageView setTranslatesAutoresizingMaskIntoConstraints:NO];
+//    [self.scrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
+//}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return self.imageView;
 }
 
 - (void) setPhotoData:(NSDictionary *)photoData {
