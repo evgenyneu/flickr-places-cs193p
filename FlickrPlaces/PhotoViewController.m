@@ -9,7 +9,21 @@
 #import "PhotoViewController.h"
 #import "FlickrFetcher.h"
 
+@interface PhotoViewController()
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewHeightConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewWidthConstraint;
+
+@end
+
 @implementation PhotoViewController
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.image setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.scrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
+}
 
 - (void) setPhotoData:(NSDictionary *)photoData {
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -23,6 +37,10 @@
         UIImage *image = [UIImage imageWithData:imageData];
         dispatch_async(dispatch_get_main_queue(), ^{
             self.image.image = image;
+            self.imageViewWidthConstraint.constant = image.size.width;
+            self.imageViewHeightConstraint.constant = image.size.height;
+            [self.image setNeedsUpdateConstraints];
+            [self.image setNeedsLayout];
             self.navigationItem.rightBarButtonItem = nil;
         });
     });
