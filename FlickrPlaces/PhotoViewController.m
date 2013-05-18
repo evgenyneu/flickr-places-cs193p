@@ -15,6 +15,10 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewWidthConstraint;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @end
 
 @implementation PhotoViewController
@@ -34,7 +38,7 @@
         NSData *imageData = [NSData dataWithContentsOfURL:urlForPhoto];
         UIImage *image = [UIImage imageWithData:imageData];
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.image.image = image;
+            self.imageView.image = image;
             self.imageViewWidthConstraint.constant = image.size.width;
             self.imageViewHeightConstraint.constant = image.size.height;
             self.navigationItem.rightBarButtonItem = nil;

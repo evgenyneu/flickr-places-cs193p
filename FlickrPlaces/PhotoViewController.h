@@ -12,8 +12,4 @@
 
 @property (nonatomic, strong) NSDictionary *photoData;
 
-@property (weak, nonatomic) IBOutlet UIImageView *image;
-
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-
 @end
