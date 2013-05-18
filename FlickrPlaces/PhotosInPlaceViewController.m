@@ -9,6 +9,7 @@
 #import "PhotosInPlaceViewController.h"
 #import "FlickrFetcher.h"
 #import "nsstring_extend.m"
+#import "PhotoViewController.h"
 
 #define PHOTOS_IN_PLACE_CELL_IDENTIFIER @"Flickr Photo In Place"
 
@@ -40,6 +41,13 @@
             self.navigationItem.rightBarButtonItem = nil;
         });
     });
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    NSDictionary *photo = self.photosInPlace[indexPath.row];
+    [segue.destinationViewController setPhoto:photo];
 }
 
 #pragma mark - Table view data source
