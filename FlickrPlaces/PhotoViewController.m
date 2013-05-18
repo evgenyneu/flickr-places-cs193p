@@ -21,8 +21,6 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self.image setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self.scrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
 }
 
 - (void) setPhotoData:(NSDictionary *)photoData {
@@ -39,8 +37,6 @@
             self.image.image = image;
             self.imageViewWidthConstraint.constant = image.size.width;
             self.imageViewHeightConstraint.constant = image.size.height;
-            [self.image setNeedsUpdateConstraints];
-            [self.image setNeedsLayout];
             self.navigationItem.rightBarButtonItem = nil;
         });
     });
