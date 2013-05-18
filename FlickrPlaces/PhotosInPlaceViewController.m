@@ -8,16 +8,9 @@
 
 #import "PhotosInPlaceViewController.h"
 #import "FlickrFetcher.h"
+#import "nsstring_extend.m"
 
 #define PHOTOS_IN_PLACE_CELL_IDENTIFIER @"Flickr Photo In Place"
-
-@implementation NSString (Empty)
-
-- (BOOL) isEmpty{
-    return ([[self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]length] == 0);
-}
-
-@end
 
 @implementation PhotosInPlaceViewController
 
