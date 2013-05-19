@@ -35,7 +35,7 @@
     
     dispatch_queue_t downloadQueue = dispatch_queue_create("flickr top places downloader", NULL);
     dispatch_async(downloadQueue, ^{
-        NSArray *photos = [FlickrFetcher photosInPlace:self.selectedPlacePhoto maxResults:50];
+        NSArray *photos = [FlickrFetcher photosInPlace:self.selectedPlacePhoto maxResults:20];
         dispatch_async(dispatch_get_main_queue(), ^{
             self.photosInPlace = photos;
             self.navigationItem.rightBarButtonItem = nil;

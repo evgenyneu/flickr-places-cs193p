@@ -33,8 +33,31 @@
 
 + (NSArray *)topPlaces
 {
-    NSString *request = [NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.places.getTopPlacesList&place_type_id=7"];
+    NSString *lastWeek = [FlickrFetcher formatDate:[FlickrFetcher oneWeeksAgo]];
+    NSString *request = [NSString stringWithFormat:@"http://api.flickr.com/services/rest/?method=flickr.places.getTopPlacesList&place_type_id=7&date=%@", lastWeek];
     return [[self executeFlickrFetch:request] valueForKeyPath:@"places.place"];
+}
+
++ (NSDate *)oneWeeksAgo {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDate *today = [NSDate date];
+    
+    NSDateComponents *twoWeeksAgoComponents = [[NSDateComponents alloc] init];
+    [twoWeeksAgoComponents setWeek:-1];
+    NSDate *twoWeeksAgo = [calendar dateByAddingComponents:twoWeeksAgoComponents toDate:today options:0];
+    return twoWeeksAgo;
+}
+
++ (NSString *)formatDate:(NSDate *) date {
+    NSDateFormatter *formatter;
+    NSString        *dateString;
+    
+    formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    
+    dateString = [formatter stringFromDate:date];
+    
+    return dateString;
 }
 
 + (NSArray *)photosInPlace:(NSDictionary *)place maxResults:(int)maxResults
@@ -64,10 +87,10 @@
 	switch (format) {
 		case FlickrPhotoFormatSquare:    formatString = @"s"; break;
 		case FlickrPhotoFormatLarge:     formatString = @"b"; break;
-		// case FlickrPhotoFormatThumbnail: formatString = @"t"; break;
-		// case FlickrPhotoFormatSmall:     formatString = @"m"; break;
-		// case FlickrPhotoFormatMedium500: formatString = @"-"; break;
-		// case FlickrPhotoFormatMedium640: formatString = @"z"; break;
+		//case FlickrPhotoFormatThumbnail: formatString = @"t"; break;
+		//case FlickrPhotoFormatSmall:     formatString = @"m"; break;
+		//case FlickrPhotoFormatMedium500: formatString = @"-"; break;
+		case FlickrPhotoFormatMedium640: formatString = @"z"; break;
 		case FlickrPhotoFormatOriginal:  formatString = @"o"; break;
 	}
     

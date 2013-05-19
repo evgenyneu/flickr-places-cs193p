@@ -19,6 +19,7 @@
 typedef enum {
 	FlickrPhotoFormatSquare = 1,
 	FlickrPhotoFormatLarge = 2,
+    FlickrPhotoFormatMedium640 = 4,
 	FlickrPhotoFormatOriginal = 64
 } FlickrPhotoFormat;
 

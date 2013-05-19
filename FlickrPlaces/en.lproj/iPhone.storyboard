@@ -108,37 +108,32 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.20000000000000001" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="XZl-NQ-1kF">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="fmb-sK-2O5">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBq-Sx-fPJ">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="504" type="user" id="H6Y-fA-eoy"/>
-                                            <constraint firstAttribute="width" constant="320" type="user" id="oMe-P1-odt"/>
-                                        </constraints>
-                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ov-Va-9Za"/>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="gBq-Sx-fPJ" firstAttribute="top" secondItem="XZl-NQ-1kF" secondAttribute="top" priority="1" type="user" id="CFi-VF-Rb3"/>
-                                    <constraint firstItem="gBq-Sx-fPJ" firstAttribute="trailing" secondItem="XZl-NQ-1kF" secondAttribute="trailing" priority="1" type="user" id="HWf-zB-cGm"/>
-                                    <constraint firstItem="gBq-Sx-fPJ" firstAttribute="leading" secondItem="XZl-NQ-1kF" secondAttribute="leading" priority="1" type="user" id="TNn-J1-yLb"/>
-                                    <constraint firstItem="gBq-Sx-fPJ" firstAttribute="bottom" secondItem="XZl-NQ-1kF" secondAttribute="bottom" priority="1" type="user" id="cRz-d3-LJr"/>
+                                    <constraint firstItem="8ov-Va-9Za" firstAttribute="trailing" secondItem="fmb-sK-2O5" secondAttribute="trailing" type="default" id="7BP-zI-2j8"/>
+                                    <constraint firstItem="8ov-Va-9Za" firstAttribute="centerX" secondItem="fmb-sK-2O5" secondAttribute="centerX" type="default" id="EL5-gK-IDi"/>
+                                    <constraint firstItem="8ov-Va-9Za" firstAttribute="centerY" secondItem="fmb-sK-2O5" secondAttribute="centerY" type="default" id="Pbl-1T-Qrv"/>
+                                    <constraint firstItem="8ov-Va-9Za" firstAttribute="bottom" secondItem="fmb-sK-2O5" secondAttribute="bottom" type="default" id="Qdi-gv-Fhi"/>
+                                    <constraint firstItem="8ov-Va-9Za" firstAttribute="leading" secondItem="fmb-sK-2O5" secondAttribute="leading" type="default" id="mrZ-3D-sHO"/>
+                                    <constraint firstItem="8ov-Va-9Za" firstAttribute="top" secondItem="fmb-sK-2O5" secondAttribute="top" type="default" id="rKC-q6-cTH"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="XZl-NQ-1kF" secondAttribute="bottom" type="user" id="7Fn-ek-TlU"/>
-                            <constraint firstItem="XZl-NQ-1kF" firstAttribute="leading" secondItem="Qyl-p1-4Kv" secondAttribute="leading" type="user" id="M1u-2O-RYf"/>
-                            <constraint firstItem="XZl-NQ-1kF" firstAttribute="top" secondItem="Qyl-p1-4Kv" secondAttribute="top" type="user" id="W5f-MI-fa8"/>
-                            <constraint firstItem="XZl-NQ-1kF" firstAttribute="trailing" secondItem="Qyl-p1-4Kv" secondAttribute="trailing" type="user" id="ldy-Uo-sGy"/>
+                            <constraint firstItem="fmb-sK-2O5" firstAttribute="top" secondItem="Qyl-p1-4Kv" secondAttribute="top" type="default" id="Klu-f4-SKq"/>
+                            <constraint firstItem="fmb-sK-2O5" firstAttribute="bottom" secondItem="Qyl-p1-4Kv" secondAttribute="bottom" type="default" id="RdN-p9-VnD"/>
+                            <constraint firstItem="fmb-sK-2O5" firstAttribute="trailing" secondItem="Qyl-p1-4Kv" secondAttribute="trailing" type="default" id="Ys6-C9-Rch"/>
+                            <constraint firstItem="fmb-sK-2O5" firstAttribute="leading" secondItem="Qyl-p1-4Kv" secondAttribute="leading" type="default" id="kjd-dC-JgZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yvT-t4-AFk"/>
                     <connections>
-                        <outlet property="imageView" destination="gBq-Sx-fPJ" id="bkI-zW-Iy8"/>
-                        <outlet property="imageViewHeightConstraint" destination="H6Y-fA-eoy" id="cF7-NF-QIz"/>
-                        <outlet property="imageViewWidthConstraint" destination="oMe-P1-odt" id="iZb-zF-eGJ"/>
-                        <outlet property="scrollView" destination="XZl-NQ-1kF" id="LOZ-dv-yGc"/>
+                        <outlet property="imageView" destination="8ov-Va-9Za" id="Xir-DM-i9e"/>
+                        <outlet property="scrollView" destination="fmb-sK-2O5" id="BcU-Ct-sAQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5v-Oq-mr9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,8 +173,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="imageViewHeightConstraint" candidateClass="NSLayoutConstraint"/>
-                <relationship kind="outlet" name="imageViewWidthConstraint" candidateClass="NSLayoutConstraint"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
