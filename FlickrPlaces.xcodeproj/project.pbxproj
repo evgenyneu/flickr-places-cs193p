@@ -20,6 +20,7 @@
 		2B2DF2BC172907F200F9E8D1 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B2DF2BA172907F200F9E8D1 /* iPad.storyboard */; };
 		2B579C0A172CB39600530ECB /* PhotosInPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B579C09172CB39600530ECB /* PhotosInPlaceViewController.m */; };
 		2B94E3C3172CBE5600DB1B96 /* nsstring_extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B94E3C2172CBE5600DB1B96 /* nsstring_extend.m */; };
+		2BA89A2D1751FAB600FDBF0F /* RecentPhotosStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA89A2C1751FAB600FDBF0F /* RecentPhotosStorage.m */; };
 		2BC0E5B11729146500CFF29A /* FlickrPlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC0E5B01729146500CFF29A /* FlickrPlacesTableViewController.m */; };
 		2BC0E5B21729187E00CFF29A /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2DF2C817290C3900F9E8D1 /* FlickrFetcher.m */; };
 		2BFD82DF174757C200EE0A73 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFD82DE174757C200EE0A73 /* PhotoViewController.m */; };
@@ -47,6 +48,8 @@
 		2B579C08172CB39600530ECB /* PhotosInPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosInPlaceViewController.h; sourceTree = "<group>"; };
 		2B579C09172CB39600530ECB /* PhotosInPlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosInPlaceViewController.m; sourceTree = "<group>"; };
 		2B94E3C2172CBE5600DB1B96 /* nsstring_extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nsstring_extend.m; sourceTree = "<group>"; };
+		2BA89A2B1751FAB600FDBF0F /* RecentPhotosStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentPhotosStorage.h; sourceTree = "<group>"; };
+		2BA89A2C1751FAB600FDBF0F /* RecentPhotosStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentPhotosStorage.m; sourceTree = "<group>"; };
 		2BC0E5AF1729146500CFF29A /* FlickrPlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPlacesTableViewController.h; sourceTree = "<group>"; };
 		2BC0E5B01729146500CFF29A /* FlickrPlacesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPlacesTableViewController.m; sourceTree = "<group>"; };
 		2BFD82DD174757C200EE0A73 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				2BC0E5B01729146500CFF29A /* FlickrPlacesTableViewController.m */,
 				2B579C08172CB39600530ECB /* PhotosInPlaceViewController.h */,
 				2B579C09172CB39600530ECB /* PhotosInPlaceViewController.m */,
+				2BA89A2B1751FAB600FDBF0F /* RecentPhotosStorage.h */,
+				2BA89A2C1751FAB600FDBF0F /* RecentPhotosStorage.m */,
 				2B2DF2A6172907F200F9E8D1 /* Supporting Files */,
 			);
 			path = FlickrPlaces;
@@ -221,6 +226,7 @@
 				2B579C0A172CB39600530ECB /* PhotosInPlaceViewController.m in Sources */,
 				2B94E3C3172CBE5600DB1B96 /* nsstring_extend.m in Sources */,
 				2BFD82DF174757C200EE0A73 /* PhotoViewController.m in Sources */,
+				2BA89A2D1751FAB600FDBF0F /* RecentPhotosStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

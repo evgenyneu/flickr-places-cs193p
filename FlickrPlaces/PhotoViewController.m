@@ -8,6 +8,7 @@
 
 #import "PhotoViewController.h"
 #import "FlickrFetcher.h"
+#import "RecentPhotosStorage.h"
 
 @interface PhotoViewController()  <UIScrollViewDelegate>
 
@@ -93,6 +94,8 @@
     [spinner startAnimating];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
     self.title = photoData[@"title"];
+    
+    [RecentPhotosStorage savePhotoToRecent:photoData];
     
     dispatch_queue_t downloadQueue = dispatch_queue_create("flickr get photo url", NULL);
     dispatch_async(downloadQueue, ^{
