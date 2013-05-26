@@ -9,7 +9,7 @@
 #import "RecentPhotosStorage.h"
 
 #define RECENT_KEY @"recent photos"
-#define MAX_RECENT_ITEMS 5
+#define MAX_RECENT_ITEMS 20
 
 @implementation RecentPhotosStorage
 
@@ -25,6 +25,14 @@
     
     if (existingIndex != NSNotFound) [recent removeObjectAtIndex:existingIndex];
     [recent insertObject:photoData atIndex:0];
+    
+    if (recent.count > MAX_RECENT_ITEMS) {
+        NSRange theRange;
+        theRange.location = 0;
+        theRange.length = MAX_RECENT_ITEMS;
+        recent = [[recent subarrayWithRange:theRange] mutableCopy];
+    }
+    
     [RecentPhotosStorage saveRecent:recent];
 }
 
