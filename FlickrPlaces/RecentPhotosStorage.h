@@ -11,5 +11,6 @@
 @interface RecentPhotosStorage : NSObject
 
 + (void) savePhotoToRecent: (NSDictionary*) photoData;
++ (NSMutableArray*) getRecentPhotos;
 
 @end

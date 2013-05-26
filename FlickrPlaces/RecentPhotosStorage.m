@@ -8,14 +8,22 @@
 
 #import "RecentPhotosStorage.h"
 
-#define RECENT_KEY @"recent_photos"
+#define RECENT_KEY @"recent photos"
 #define MAX_RECENT_ITEMS 5
 
 @implementation RecentPhotosStorage
 
 + (void) savePhotoToRecent: (NSDictionary*) photoData {
     NSMutableArray *recent = [RecentPhotosStorage getRecentPhotos];
-    [recent removeObjectIdenticalTo:photoData];
+    NSUInteger existingIndex = [recent indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        if ([((NSDictionary *)obj)[@"id"] isEqualToString:photoData[@"id"]]) {
+            *stop = YES;
+            return YES;
+        }
+        return NO;
+    }];
+    
+    if (existingIndex != NSNotFound) [recent removeObjectAtIndex:existingIndex];
     [recent insertObject:photoData atIndex:0];
     [RecentPhotosStorage saveRecent:recent];
 }
