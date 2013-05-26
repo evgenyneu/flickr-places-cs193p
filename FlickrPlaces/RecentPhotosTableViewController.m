@@ -10,6 +10,7 @@
 #import "RecentPhotosStorage.h"
 #import "FlickrFetcher.h"
 #import "nsstring_extend.m"
+#import "PhotoViewController.h"
 
 #define RECENT_PHOTO_CELL_IDENTIFIER @"Recent Photo"
 
@@ -23,8 +24,16 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
     self.photos = [[RecentPhotosStorage getRecentPhotos] copy];
     [self.tableView reloadData];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    NSDictionary *photo = self.photos[indexPath.row];
+    [segue.destinationViewController setPhotoData:photo];
 }
 
 #pragma mark - Table view data source
