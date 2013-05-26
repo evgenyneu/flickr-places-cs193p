@@ -92,6 +92,7 @@
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [spinner startAnimating];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+    self.title = photoData[@"title"];
     
     dispatch_queue_t downloadQueue = dispatch_queue_create("flickr get photo url", NULL);
     dispatch_async(downloadQueue, ^{
